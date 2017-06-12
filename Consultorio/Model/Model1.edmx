@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="PacienteSet" EntityType="Model1.Store.PacienteSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MedicoSet" EntityType="Model1.Store.MedicoSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ConsultaSet" EntityType="Model1.Store.ConsultaSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProntuarioSet" EntityType="Model1.Store.ProntuarioSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="MedicoConsulta" Association="Model1.Store.MedicoConsulta">
+      <End Role="Medico" EntitySet="MedicoSet" />
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+    </AssociationSet>
+    <AssociationSet Name="PacienteConsulta" Association="Model1.Store.PacienteConsulta">
+      <End Role="Paciente" EntitySet="PacienteSet" />
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+    </AssociationSet>
+    <AssociationSet Name="PacienteProntuario" Association="Model1.Store.PacienteProntuario">
+      <End Role="Paciente" EntitySet="PacienteSet" />
+      <End Role="Prontuario" EntitySet="ProntuarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="ConsultaProntuario" Association="Model1.Store.ConsultaProntuario">
+      <End Role="Consulta" EntitySet="ConsultaSet" />
+      <End Role="Prontuario" EntitySet="ProntuarioSet" />
+    </AssociationSet>
+    <AssociationSet Name="MedicoProntuario" Association="Model1.Store.MedicoProntuario">
+      <End Role="Medico" EntitySet="MedicoSet" />
+      <End Role="Prontuario" EntitySet="ProntuarioSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="PacienteSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Carteirinha" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="RG" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefone" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MedicoSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CRM" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Idade" Type="int" Nullable="false" />
+    <Property Name="Especializacao" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Telefone" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="RG" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="CPF" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ConsultaSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataConsulta" Type="datetime" Nullable="false" />
+    <Property Name="Motivo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Medico_Id" Type="int" Nullable="false" />
+    <Property Name="Paciente_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProntuarioSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DescricaoPaciente" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Diagnostico" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrescricaoMedicamento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PrescricaoTratamento" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Paciente_Id" Type="int" Nullable="false" />
+    <Property Name="Consulta_Id" Type="int" Nullable="false" />
+    <Property Name="Medico_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="MedicoConsulta">
+    <End Role="Medico" Type="Model1.Store.MedicoSet" Multiplicity="1" />
+    <End Role="Consulta" Type="Model1.Store.ConsultaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medico">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consulta">
+        <PropertyRef Name="Medico_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PacienteConsulta">
+    <End Role="Paciente" Type="Model1.Store.PacienteSet" Multiplicity="1" />
+    <End Role="Consulta" Type="Model1.Store.ConsultaSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Consulta">
+        <PropertyRef Name="Paciente_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="PacienteProntuario">
+    <End Role="Paciente" Type="Model1.Store.PacienteSet" Multiplicity="1" />
+    <End Role="Prontuario" Type="Model1.Store.ProntuarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Paciente">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prontuario">
+        <PropertyRef Name="Paciente_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ConsultaProntuario">
+    <End Role="Consulta" Type="Model1.Store.ConsultaSet" Multiplicity="1" />
+    <End Role="Prontuario" Type="Model1.Store.ProntuarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consulta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prontuario">
+        <PropertyRef Name="Consulta_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MedicoProntuario">
+    <End Role="Medico" Type="Model1.Store.MedicoSet" Multiplicity="1" />
+    <End Role="Prontuario" Type="Model1.Store.ProntuarioSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Medico">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Prontuario">
+        <PropertyRef Name="Medico_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PacienteSet" EntityType="Model1.Paciente" />
+          <EntitySet Name="MedicoSet" EntityType="Model1.Medico" />
+          <EntitySet Name="ConsultaSet" EntityType="Model1.Consulta" />
+          <EntitySet Name="ProntuarioSet" EntityType="Model1.Prontuario" />
+          <AssociationSet Name="MedicoConsulta" Association="Model1.MedicoConsulta">
+            <End Role="Medico" EntitySet="MedicoSet" />
+            <End Role="Consulta" EntitySet="ConsultaSet" />
+          </AssociationSet>
+          <AssociationSet Name="PacienteConsulta" Association="Model1.PacienteConsulta">
+            <End Role="Paciente" EntitySet="PacienteSet" />
+            <End Role="Consulta" EntitySet="ConsultaSet" />
+          </AssociationSet>
+          <AssociationSet Name="PacienteProntuario" Association="Model1.PacienteProntuario">
+            <End Role="Paciente" EntitySet="PacienteSet" />
+            <End Role="Prontuario" EntitySet="ProntuarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="ConsultaProntuario" Association="Model1.ConsultaProntuario">
+            <End Role="Consulta" EntitySet="ConsultaSet" />
+            <End Role="Prontuario" EntitySet="ProntuarioSet" />
+          </AssociationSet>
+          <AssociationSet Name="MedicoProntuario" Association="Model1.MedicoProntuario">
+            <End Role="Medico" EntitySet="MedicoSet" />
+            <End Role="Prontuario" EntitySet="ProntuarioSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Paciente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Carteirinha" Type="String" Nullable="false" />
+          <Property Name="Idade" Type="Int32" Nullable="false" />
+          <Property Name="RG" Type="String" Nullable="false" />
+          <Property Name="CPF" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <NavigationProperty Name="Consulta" Relationship="Model1.PacienteConsulta" FromRole="Paciente" ToRole="Consulta" />
+          <NavigationProperty Name="Prontuario" Relationship="Model1.PacienteProntuario" FromRole="Paciente" ToRole="Prontuario" />
+        </EntityType>
+        <EntityType Name="Medico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="CRM" Type="String" Nullable="false" />
+          <Property Name="Idade" Type="Int32" Nullable="false" />
+          <Property Name="Especializacao" Type="String" Nullable="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" />
+          <Property Name="Email" Type="String" Nullable="false" />
+          <Property Name="RG" Type="String" Nullable="false" />
+          <Property Name="CPF" Type="String" Nullable="false" />
+          <NavigationProperty Name="Consulta" Relationship="Model1.MedicoConsulta" FromRole="Medico" ToRole="Consulta" />
+          <NavigationProperty Name="Prontuario" Relationship="Model1.MedicoProntuario" FromRole="Medico" ToRole="Prontuario" />
+        </EntityType>
+        <EntityType Name="Consulta">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DataConsulta" Type="DateTime" Nullable="false" />
+          <Property Name="Motivo" Type="String" Nullable="false" />
+          <NavigationProperty Name="Medico" Relationship="Model1.MedicoConsulta" FromRole="Consulta" ToRole="Medico" />
+          <NavigationProperty Name="Paciente" Relationship="Model1.PacienteConsulta" FromRole="Consulta" ToRole="Paciente" />
+          <NavigationProperty Name="Prontuario" Relationship="Model1.ConsultaProntuario" FromRole="Consulta" ToRole="Prontuario" />
+        </EntityType>
+        <EntityType Name="Prontuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DescricaoPaciente" Type="String" Nullable="false" />
+          <Property Name="Diagnostico" Type="String" Nullable="false" />
+          <Property Name="PrescricaoMedicamento" Type="String" Nullable="false" />
+          <Property Name="PrescricaoTratamento" Type="String" Nullable="false" />
+          <NavigationProperty Name="Paciente" Relationship="Model1.PacienteProntuario" FromRole="Prontuario" ToRole="Paciente" />
+          <NavigationProperty Name="Consulta" Relationship="Model1.ConsultaProntuario" FromRole="Prontuario" ToRole="Consulta" />
+          <NavigationProperty Name="Medico" Relationship="Model1.MedicoProntuario" FromRole="Prontuario" ToRole="Medico" />
+        </EntityType>
+        <Association Name="MedicoConsulta">
+          <End Type="Model1.Medico" Role="Medico" Multiplicity="1" />
+          <End Type="Model1.Consulta" Role="Consulta" Multiplicity="*" />
+        </Association>
+        <Association Name="PacienteConsulta">
+          <End Type="Model1.Paciente" Role="Paciente" Multiplicity="1" />
+          <End Type="Model1.Consulta" Role="Consulta" Multiplicity="*" />
+        </Association>
+        <Association Name="PacienteProntuario">
+          <End Type="Model1.Paciente" Role="Paciente" Multiplicity="1" />
+          <End Type="Model1.Prontuario" Role="Prontuario" Multiplicity="*" />
+        </Association>
+        <Association Name="ConsultaProntuario">
+          <End Type="Model1.Consulta" Role="Consulta" Multiplicity="1" />
+          <End Type="Model1.Prontuario" Role="Prontuario" Multiplicity="*" />
+        </Association>
+        <Association Name="MedicoProntuario">
+          <End Type="Model1.Medico" Role="Medico" Multiplicity="1" />
+          <End Type="Model1.Prontuario" Role="Prontuario" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="PacienteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Paciente)">
+        <MappingFragment StoreEntitySet="PacienteSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Carteirinha" ColumnName="Carteirinha" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="RG" ColumnName="RG" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedicoSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Medico)">
+        <MappingFragment StoreEntitySet="MedicoSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="CRM" ColumnName="CRM" />
+          <ScalarProperty Name="Idade" ColumnName="Idade" />
+          <ScalarProperty Name="Especializacao" ColumnName="Especializacao" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="RG" ColumnName="RG" />
+          <ScalarProperty Name="CPF" ColumnName="CPF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Consulta)">
+        <MappingFragment StoreEntitySet="ConsultaSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DataConsulta" ColumnName="DataConsulta" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProntuarioSet">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Prontuario)">
+        <MappingFragment StoreEntitySet="ProntuarioSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="DescricaoPaciente" ColumnName="DescricaoPaciente" />
+          <ScalarProperty Name="Diagnostico" ColumnName="Diagnostico" />
+          <ScalarProperty Name="PrescricaoMedicamento" ColumnName="PrescricaoMedicamento" />
+          <ScalarProperty Name="PrescricaoTratamento" ColumnName="PrescricaoTratamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="MedicoConsulta" TypeName="Model1.MedicoConsulta" StoreEntitySet="ConsultaSet">
+      <EndProperty Name="Medico">
+        <ScalarProperty Name="Id" ColumnName="Medico_Id" />
+      </EndProperty>
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PacienteConsulta" TypeName="Model1.PacienteConsulta" StoreEntitySet="ConsultaSet">
+      <EndProperty Name="Paciente">
+        <ScalarProperty Name="Id" ColumnName="Paciente_Id" />
+      </EndProperty>
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="PacienteProntuario" TypeName="Model1.PacienteProntuario" StoreEntitySet="ProntuarioSet">
+      <EndProperty Name="Paciente">
+        <ScalarProperty Name="Id" ColumnName="Paciente_Id" />
+      </EndProperty>
+      <EndProperty Name="Prontuario">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="ConsultaProntuario" TypeName="Model1.ConsultaProntuario" StoreEntitySet="ProntuarioSet">
+      <EndProperty Name="Consulta">
+        <ScalarProperty Name="Id" ColumnName="Consulta_Id" />
+      </EndProperty>
+      <EndProperty Name="Prontuario">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="MedicoProntuario" TypeName="Model1.MedicoProntuario" StoreEntitySet="ProntuarioSet">
+      <EndProperty Name="Medico">
+        <ScalarProperty Name="Id" ColumnName="Medico_Id" />
+      </EndProperty>
+      <EndProperty Name="Prontuario">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
