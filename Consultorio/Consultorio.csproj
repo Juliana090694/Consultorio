@@ -66,6 +66,11 @@
     <Compile Include="Controller\MedicoController.cs" />
     <Compile Include="Controller\PacienteController.cs" />
     <Compile Include="Controller\ProntuarioController.cs" />
+    <Compile Include="Imagens.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Imagens.resx</DependentUpon>
+    </Compile>
     <Compile Include="Model\Consulta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -93,6 +98,12 @@
     <Compile Include="Model\Prontuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\ConsultaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConsultaView.Designer.cs">
+      <DependentUpon>ConsultaView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MainView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +124,19 @@
     <Compile Include="View\PacienteView.Designer.cs">
       <DependentUpon>PacienteView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProntuarioView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProntuarioView.Designer.cs">
+      <DependentUpon>ProntuarioView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Imagens.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Imagens.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConsultaView.resx">
+      <DependentUpon>ConsultaView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MainView.resx">
       <DependentUpon>MainView.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PacienteView.resx">
       <DependentUpon>PacienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProntuarioView.resx">
+      <DependentUpon>ProntuarioView.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -164,6 +191,8 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\flat-round-medical-icons-set_23-2147495494.png" />
+    <None Include="Resources\Principal.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

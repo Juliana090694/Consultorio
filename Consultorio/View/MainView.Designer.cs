@@ -28,231 +28,241 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.patientList = new BrightIdeasSoftware.ObjectListView();
-            this.addPatientButton = new System.Windows.Forms.Button();
-            this.editPatientButton = new System.Windows.Forms.Button();
-            this.deletePatientButton = new System.Windows.Forms.Button();
-            this.deleteMedicButton = new System.Windows.Forms.Button();
-            this.editMedicButton = new System.Windows.Forms.Button();
-            this.addMedicButton = new System.Windows.Forms.Button();
-            this.medicList = new BrightIdeasSoftware.ObjectListView();
-            this.deleteAppointmentButton = new System.Windows.Forms.Button();
-            this.editAppointmentButton = new System.Windows.Forms.Button();
-            this.addAppointmentButton = new System.Windows.Forms.Button();
-            this.deleteMedicalRecordButton = new System.Windows.Forms.Button();
-            this.editMedicalRecordButton = new System.Windows.Forms.Button();
-            this.addMedicalRecordButton = new System.Windows.Forms.Button();
-            this.appointmentList = new BrightIdeasSoftware.ObjectListView();
-            this.medicalRecordList = new BrightIdeasSoftware.ObjectListView();
-            ((System.ComponentModel.ISupportInitialize)(this.patientList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicalRecordList)).BeginInit();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.adicionarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.médicoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prontuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procurarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacienteToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.médicoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prontuárioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.removerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacienteToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.médicoToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prontuárioToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.excluirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacienteToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.médicoToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prontuárioToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // patientList
+            // menuStrip1
             // 
-            this.patientList.CellEditUseWholeCell = false;
-            this.patientList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.patientList.Location = new System.Drawing.Point(12, 12);
-            this.patientList.Name = "patientList";
-            this.patientList.Size = new System.Drawing.Size(199, 236);
-            this.patientList.TabIndex = 0;
-            this.patientList.UseCompatibleStateImageBehavior = false;
-            this.patientList.View = System.Windows.Forms.View.Details;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adicionarToolStripMenuItem,
+            this.procurarToolStripMenuItem,
+            this.removerToolStripMenuItem,
+            this.excluirToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(277, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // addPatientButton
+            // adicionarToolStripMenuItem
             // 
-            this.addPatientButton.Location = new System.Drawing.Point(218, 13);
-            this.addPatientButton.Name = "addPatientButton";
-            this.addPatientButton.Size = new System.Drawing.Size(75, 36);
-            this.addPatientButton.TabIndex = 1;
-            this.addPatientButton.Text = "Adicionar Paciente";
-            this.addPatientButton.UseVisualStyleBackColor = true;
+            this.adicionarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pacienteToolStripMenuItem,
+            this.médicoToolStripMenuItem,
+            this.consultaToolStripMenuItem,
+            this.prontuárioToolStripMenuItem});
+            this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
+            this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+            this.adicionarToolStripMenuItem.Text = "Adicionar";
             // 
-            // editPatientButton
+            // pacienteToolStripMenuItem
             // 
-            this.editPatientButton.Location = new System.Drawing.Point(218, 55);
-            this.editPatientButton.Name = "editPatientButton";
-            this.editPatientButton.Size = new System.Drawing.Size(75, 36);
-            this.editPatientButton.TabIndex = 2;
-            this.editPatientButton.Text = "Editar Paciente";
-            this.editPatientButton.UseVisualStyleBackColor = true;
+            this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pacienteToolStripMenuItem.Text = "Paciente";
+            this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.pacienteToolStripMenuItem_Click);
             // 
-            // deletePatientButton
+            // médicoToolStripMenuItem
             // 
-            this.deletePatientButton.Location = new System.Drawing.Point(217, 97);
-            this.deletePatientButton.Name = "deletePatientButton";
-            this.deletePatientButton.Size = new System.Drawing.Size(75, 36);
-            this.deletePatientButton.TabIndex = 3;
-            this.deletePatientButton.Text = "Excluir Paciente";
-            this.deletePatientButton.UseVisualStyleBackColor = true;
+            this.médicoToolStripMenuItem.Name = "médicoToolStripMenuItem";
+            this.médicoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.médicoToolStripMenuItem.Text = "Médico";
             // 
-            // deleteMedicButton
+            // consultaToolStripMenuItem
             // 
-            this.deleteMedicButton.Location = new System.Drawing.Point(504, 97);
-            this.deleteMedicButton.Name = "deleteMedicButton";
-            this.deleteMedicButton.Size = new System.Drawing.Size(75, 36);
-            this.deleteMedicButton.TabIndex = 7;
-            this.deleteMedicButton.Text = "Excluir Médico";
-            this.deleteMedicButton.UseVisualStyleBackColor = true;
+            this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem.Text = "Consulta";
             // 
-            // editMedicButton
+            // prontuárioToolStripMenuItem
             // 
-            this.editMedicButton.Location = new System.Drawing.Point(505, 55);
-            this.editMedicButton.Name = "editMedicButton";
-            this.editMedicButton.Size = new System.Drawing.Size(75, 36);
-            this.editMedicButton.TabIndex = 6;
-            this.editMedicButton.Text = "Editar Médico";
-            this.editMedicButton.UseVisualStyleBackColor = true;
+            this.prontuárioToolStripMenuItem.Name = "prontuárioToolStripMenuItem";
+            this.prontuárioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.prontuárioToolStripMenuItem.Text = "Prontuário";
             // 
-            // addMedicButton
+            // procurarToolStripMenuItem
             // 
-            this.addMedicButton.Location = new System.Drawing.Point(505, 13);
-            this.addMedicButton.Name = "addMedicButton";
-            this.addMedicButton.Size = new System.Drawing.Size(75, 36);
-            this.addMedicButton.TabIndex = 5;
-            this.addMedicButton.Text = "Adicionar Médico";
-            this.addMedicButton.UseVisualStyleBackColor = true;
+            this.procurarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pacienteToolStripMenuItem1,
+            this.médicoToolStripMenuItem1,
+            this.consultaToolStripMenuItem1,
+            this.prontuárioToolStripMenuItem1});
+            this.procurarToolStripMenuItem.Name = "procurarToolStripMenuItem";
+            this.procurarToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.procurarToolStripMenuItem.Text = "Procurar";
             // 
-            // medicList
+            // pacienteToolStripMenuItem1
             // 
-            this.medicList.CellEditUseWholeCell = false;
-            this.medicList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.medicList.Location = new System.Drawing.Point(299, 12);
-            this.medicList.Name = "medicList";
-            this.medicList.Size = new System.Drawing.Size(199, 236);
-            this.medicList.TabIndex = 4;
-            this.medicList.UseCompatibleStateImageBehavior = false;
-            this.medicList.View = System.Windows.Forms.View.Details;
+            this.pacienteToolStripMenuItem1.Name = "pacienteToolStripMenuItem1";
+            this.pacienteToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.pacienteToolStripMenuItem1.Text = "Paciente";
             // 
-            // deleteAppointmentButton
+            // médicoToolStripMenuItem1
             // 
-            this.deleteAppointmentButton.Location = new System.Drawing.Point(217, 356);
-            this.deleteAppointmentButton.Name = "deleteAppointmentButton";
-            this.deleteAppointmentButton.Size = new System.Drawing.Size(75, 36);
-            this.deleteAppointmentButton.TabIndex = 11;
-            this.deleteAppointmentButton.Text = "Excluir Consulta";
-            this.deleteAppointmentButton.UseVisualStyleBackColor = true;
+            this.médicoToolStripMenuItem1.Name = "médicoToolStripMenuItem1";
+            this.médicoToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.médicoToolStripMenuItem1.Text = "Médico";
             // 
-            // editAppointmentButton
+            // consultaToolStripMenuItem1
             // 
-            this.editAppointmentButton.Location = new System.Drawing.Point(218, 314);
-            this.editAppointmentButton.Name = "editAppointmentButton";
-            this.editAppointmentButton.Size = new System.Drawing.Size(75, 36);
-            this.editAppointmentButton.TabIndex = 10;
-            this.editAppointmentButton.Text = "Editar Consulta";
-            this.editAppointmentButton.UseVisualStyleBackColor = true;
+            this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.consultaToolStripMenuItem1.Text = "Consulta";
             // 
-            // addAppointmentButton
+            // prontuárioToolStripMenuItem1
             // 
-            this.addAppointmentButton.Location = new System.Drawing.Point(218, 272);
-            this.addAppointmentButton.Name = "addAppointmentButton";
-            this.addAppointmentButton.Size = new System.Drawing.Size(75, 36);
-            this.addAppointmentButton.TabIndex = 9;
-            this.addAppointmentButton.Text = "Adicionar Consulta";
-            this.addAppointmentButton.UseVisualStyleBackColor = true;
+            this.prontuárioToolStripMenuItem1.Name = "prontuárioToolStripMenuItem1";
+            this.prontuárioToolStripMenuItem1.Size = new System.Drawing.Size(130, 22);
+            this.prontuárioToolStripMenuItem1.Text = "Prontuário";
             // 
-            // deleteMedicalRecordButton
+            // removerToolStripMenuItem
             // 
-            this.deleteMedicalRecordButton.Location = new System.Drawing.Point(504, 356);
-            this.deleteMedicalRecordButton.Name = "deleteMedicalRecordButton";
-            this.deleteMedicalRecordButton.Size = new System.Drawing.Size(75, 36);
-            this.deleteMedicalRecordButton.TabIndex = 15;
-            this.deleteMedicalRecordButton.Text = "Excluir Prontuário";
-            this.deleteMedicalRecordButton.UseVisualStyleBackColor = true;
+            this.removerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pacienteToolStripMenuItem2,
+            this.médicoToolStripMenuItem2,
+            this.consultaToolStripMenuItem2,
+            this.prontuárioToolStripMenuItem2});
+            this.removerToolStripMenuItem.Name = "removerToolStripMenuItem";
+            this.removerToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.removerToolStripMenuItem.Text = "Alterar";
             // 
-            // editMedicalRecordButton
+            // pacienteToolStripMenuItem2
             // 
-            this.editMedicalRecordButton.Location = new System.Drawing.Point(505, 314);
-            this.editMedicalRecordButton.Name = "editMedicalRecordButton";
-            this.editMedicalRecordButton.Size = new System.Drawing.Size(75, 36);
-            this.editMedicalRecordButton.TabIndex = 14;
-            this.editMedicalRecordButton.Text = "Editar Prontuário";
-            this.editMedicalRecordButton.UseVisualStyleBackColor = true;
+            this.pacienteToolStripMenuItem2.Name = "pacienteToolStripMenuItem2";
+            this.pacienteToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
+            this.pacienteToolStripMenuItem2.Text = "Paciente";
             // 
-            // addMedicalRecordButton
+            // médicoToolStripMenuItem2
             // 
-            this.addMedicalRecordButton.Location = new System.Drawing.Point(505, 272);
-            this.addMedicalRecordButton.Name = "addMedicalRecordButton";
-            this.addMedicalRecordButton.Size = new System.Drawing.Size(75, 36);
-            this.addMedicalRecordButton.TabIndex = 13;
-            this.addMedicalRecordButton.Text = "Adicionar Prontuário";
-            this.addMedicalRecordButton.UseVisualStyleBackColor = true;
+            this.médicoToolStripMenuItem2.Name = "médicoToolStripMenuItem2";
+            this.médicoToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
+            this.médicoToolStripMenuItem2.Text = "Médico";
             // 
-            // appointmentList
+            // consultaToolStripMenuItem2
             // 
-            this.appointmentList.CellEditUseWholeCell = false;
-            this.appointmentList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.appointmentList.Location = new System.Drawing.Point(12, 272);
-            this.appointmentList.Name = "appointmentList";
-            this.appointmentList.Size = new System.Drawing.Size(199, 236);
-            this.appointmentList.TabIndex = 16;
-            this.appointmentList.UseCompatibleStateImageBehavior = false;
-            this.appointmentList.View = System.Windows.Forms.View.Details;
+            this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
+            this.consultaToolStripMenuItem2.Text = "Consulta";
             // 
-            // medicalRecordList
+            // prontuárioToolStripMenuItem2
             // 
-            this.medicalRecordList.CellEditUseWholeCell = false;
-            this.medicalRecordList.Cursor = System.Windows.Forms.Cursors.Default;
-            this.medicalRecordList.Location = new System.Drawing.Point(300, 272);
-            this.medicalRecordList.Name = "medicalRecordList";
-            this.medicalRecordList.Size = new System.Drawing.Size(199, 236);
-            this.medicalRecordList.TabIndex = 17;
-            this.medicalRecordList.UseCompatibleStateImageBehavior = false;
-            this.medicalRecordList.View = System.Windows.Forms.View.Details;
+            this.prontuárioToolStripMenuItem2.Name = "prontuárioToolStripMenuItem2";
+            this.prontuárioToolStripMenuItem2.Size = new System.Drawing.Size(130, 22);
+            this.prontuárioToolStripMenuItem2.Text = "Prontuário";
+            // 
+            // excluirToolStripMenuItem
+            // 
+            this.excluirToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pacienteToolStripMenuItem3,
+            this.médicoToolStripMenuItem3,
+            this.consultaToolStripMenuItem3,
+            this.prontuárioToolStripMenuItem3});
+            this.excluirToolStripMenuItem.Name = "excluirToolStripMenuItem";
+            this.excluirToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.excluirToolStripMenuItem.Text = "Excluir";
+            // 
+            // pacienteToolStripMenuItem3
+            // 
+            this.pacienteToolStripMenuItem3.Name = "pacienteToolStripMenuItem3";
+            this.pacienteToolStripMenuItem3.Size = new System.Drawing.Size(130, 22);
+            this.pacienteToolStripMenuItem3.Text = "Paciente";
+            // 
+            // médicoToolStripMenuItem3
+            // 
+            this.médicoToolStripMenuItem3.Name = "médicoToolStripMenuItem3";
+            this.médicoToolStripMenuItem3.Size = new System.Drawing.Size(130, 22);
+            this.médicoToolStripMenuItem3.Text = "Médico";
+            // 
+            // consultaToolStripMenuItem3
+            // 
+            this.consultaToolStripMenuItem3.Name = "consultaToolStripMenuItem3";
+            this.consultaToolStripMenuItem3.Size = new System.Drawing.Size(130, 22);
+            this.consultaToolStripMenuItem3.Text = "Consulta";
+            // 
+            // prontuárioToolStripMenuItem3
+            // 
+            this.prontuárioToolStripMenuItem3.Name = "prontuárioToolStripMenuItem3";
+            this.prontuárioToolStripMenuItem3.Size = new System.Drawing.Size(130, 22);
+            this.prontuárioToolStripMenuItem3.Text = "Prontuário";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = global::Consultorio.Imagens.flat_round_medical_icons_set_23_2147495494;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(277, 280);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(593, 517);
-            this.Controls.Add(this.medicalRecordList);
-            this.Controls.Add(this.appointmentList);
-            this.Controls.Add(this.deleteMedicalRecordButton);
-            this.Controls.Add(this.editMedicalRecordButton);
-            this.Controls.Add(this.addMedicalRecordButton);
-            this.Controls.Add(this.deleteAppointmentButton);
-            this.Controls.Add(this.editAppointmentButton);
-            this.Controls.Add(this.addAppointmentButton);
-            this.Controls.Add(this.deleteMedicButton);
-            this.Controls.Add(this.editMedicButton);
-            this.Controls.Add(this.addMedicButton);
-            this.Controls.Add(this.medicList);
-            this.Controls.Add(this.deletePatientButton);
-            this.Controls.Add(this.editPatientButton);
-            this.Controls.Add(this.addPatientButton);
-            this.Controls.Add(this.patientList);
+            this.ClientSize = new System.Drawing.Size(277, 304);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
-            this.Text = "Consultorio";
-            ((System.ComponentModel.ISupportInitialize)(this.patientList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.appointmentList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicalRecordList)).EndInit();
+            this.Text = "Consultório";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private BrightIdeasSoftware.ObjectListView patientList;
-        private System.Windows.Forms.Button addPatientButton;
-        private System.Windows.Forms.Button editPatientButton;
-        private System.Windows.Forms.Button deletePatientButton;
-        private System.Windows.Forms.Button deleteMedicButton;
-        private System.Windows.Forms.Button editMedicButton;
-        private System.Windows.Forms.Button addMedicButton;
-        private BrightIdeasSoftware.ObjectListView medicList;
-        private System.Windows.Forms.Button deleteAppointmentButton;
-        private System.Windows.Forms.Button editAppointmentButton;
-        private System.Windows.Forms.Button addAppointmentButton;
-        private System.Windows.Forms.Button deleteMedicalRecordButton;
-        private System.Windows.Forms.Button editMedicalRecordButton;
-        private System.Windows.Forms.Button addMedicalRecordButton;
-        private BrightIdeasSoftware.ObjectListView appointmentList;
-        private BrightIdeasSoftware.ObjectListView medicalRecordList;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem adicionarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem médicoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prontuárioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem procurarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem médicoToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem prontuárioToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem removerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem médicoToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem prontuárioToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem excluirToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pacienteToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem médicoToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem prontuárioToolStripMenuItem3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
