@@ -16,7 +16,7 @@ namespace Consultorio.Controller
         {
             get
             {
-                return MedicoC;
+                return medicoC;
             }
         }
 
@@ -60,10 +60,12 @@ namespace Consultorio.Controller
             }
         }
 
-        public void delete(Medico medico)
+        public void delete(int id)
         {
             using (Model1Container model1 = new Model1Container())
             {
+                Medico medico = search(id);
+                model1.MedicoSet.Attach(medico);
                 model1.MedicoSet.Remove(medico);
                 model1.SaveChanges();
             }

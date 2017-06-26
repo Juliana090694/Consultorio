@@ -17,7 +17,7 @@ namespace Consultorio.Controller
         {
             get
             {
-                return ProntuarioC;
+                return prontuarioC;
             }
         }
 
@@ -49,6 +49,19 @@ namespace Consultorio.Controller
             }
         }
 
+        public Prontuario search(DateTime date)
+        {
+            using (Model1Container model1 = new Model1Container())
+            {
+                return model1.ProntuarioSet
+                    .Include(c => c.Paciente)
+                    .Include(c => c.Medico)
+                    .Include(c => c.Consulta)
+                    .Where(c => c.Consulta.DataConsulta == date)
+                    .FirstOrDefault();
+            }
+        }
+
         public void add(Prontuario prontuario)
         {
             using (Model1Container model1 = new Model1Container())
@@ -61,13 +74,15 @@ namespace Consultorio.Controller
             }
         }
 
-        public void delete(Prontuario prontuario)
+        public void delete(int id)
         {
             using (Model1Container model1 = new Model1Container())
             {
                 //model1.PacienteSet.Attach(prontuario.Paciente);
                 //model1.MedicoSet.Attach(prontuario.Medico);
                 //model1.ConsultaSet.Attach(prontuario.Consulta);
+                Prontuario prontuario = search(id);
+                model1.ProntuarioSet.Attach(prontuario);
                 model1.ProntuarioSet.Remove(prontuario);
                 model1.SaveChanges();
             }

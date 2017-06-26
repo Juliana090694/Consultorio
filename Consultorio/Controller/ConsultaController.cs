@@ -17,7 +17,7 @@ namespace Consultorio.Controller
         {
             get
             {
-                return ConsultaC;
+                return consultaC;
             }
         }
 
@@ -47,6 +47,18 @@ namespace Consultorio.Controller
             }
         }
 
+        public Consulta search(DateTime date)
+        {
+            using (Model1Container model1 = new Model1Container())
+            {
+                return model1.ConsultaSet
+                    .Include(c => c.Paciente)
+                    .Include(c => c.Medico)
+                    .Where(c => c.DataConsulta == date)
+                    .FirstOrDefault();
+            }
+        }
+
         public void add(Consulta consulta)
         {
             using (Model1Container model1 = new Model1Container())
@@ -58,12 +70,14 @@ namespace Consultorio.Controller
             }
         }
 
-        public void delete(Consulta consulta)
+        public void delete(int id)
         {
             using (Model1Container model1 = new Model1Container())
             {
                 //model1.PacienteSet.Attach(consulta.Paciente);
                 //model1.MedicoSet.Attach(consulta.Medico);
+                Consulta consulta = search(id);
+                model1.ConsultaSet.Attach(consulta);
                 model1.ConsultaSet.Remove(consulta);
                 model1.SaveChanges();
             }

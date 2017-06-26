@@ -62,6 +62,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsultoríoDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ConsultoríoDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Controller\ConsultaController.cs" />
     <Compile Include="Controller\MedicoController.cs" />
     <Compile Include="Controller\PacienteController.cs" />
@@ -98,6 +103,12 @@
     <Compile Include="Model\Prontuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="View\ConsultaSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConsultaSearchView.Designer.cs">
+      <DependentUpon>ConsultaSearchView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ConsultaView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,17 +123,35 @@
     </Compile>
     <Compile Include="Controller\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MedicoSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MedicoSearchView.Designer.cs">
+      <DependentUpon>MedicoSearchView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MedicoView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MedicoView.Designer.cs">
       <DependentUpon>MedicoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\PacienteSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PacienteSearchView.Designer.cs">
+      <DependentUpon>PacienteSearchView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\PacienteView.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\PacienteView.Designer.cs">
       <DependentUpon>PacienteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProntuarioSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProntuarioSearchView.Designer.cs">
+      <DependentUpon>ProntuarioSearchView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\ProntuarioView.cs">
       <SubType>Form</SubType>
@@ -133,6 +162,9 @@
     <EmbeddedResource Include="Imagens.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Imagens.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConsultaSearchView.resx">
+      <DependentUpon>ConsultaSearchView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ConsultaView.resx">
       <DependentUpon>ConsultaView.cs</DependentUpon>
@@ -149,11 +181,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\MedicoSearchView.resx">
+      <DependentUpon>MedicoSearchView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MedicoView.resx">
       <DependentUpon>MedicoView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PacienteSearchView.resx">
+      <DependentUpon>PacienteSearchView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\PacienteView.resx">
       <DependentUpon>PacienteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProntuarioSearchView.resx">
+      <DependentUpon>ProntuarioSearchView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProntuarioView.resx">
       <DependentUpon>ProntuarioView.cs</DependentUpon>
@@ -162,10 +203,26 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ConsultoríoDataSet.xsc">
+      <DependentUpon>ConsultoríoDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ConsultoríoDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ConsultoríoDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ConsultoríoDataSet.xss">
+      <DependentUpon>ConsultoríoDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Model\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Consultorio.Model.Consulta.datasource" />
+    <None Include="Properties\DataSources\Consultorio.Model.Medico.datasource" />
+    <None Include="Properties\DataSources\Consultorio.Model.Model1Container.datasource" />
+    <None Include="Properties\DataSources\Consultorio.Model.Paciente.datasource" />
+    <None Include="Properties\DataSources\Consultorio.Model.Prontuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
