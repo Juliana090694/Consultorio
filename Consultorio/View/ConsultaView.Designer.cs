@@ -50,7 +50,7 @@ namespace Consultorio.View
             this.button2.Location = new System.Drawing.Point(494, 118);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 49;
+            this.button2.TabIndex = 56;
             this.button2.Text = "OK";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -61,7 +61,7 @@ namespace Consultorio.View
             this.button1.Location = new System.Drawing.Point(575, 118);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 48;
+            this.button1.TabIndex = 57;
             this.button1.Text = "Cancelar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -89,7 +89,7 @@ namespace Consultorio.View
             this.textBox3.Location = new System.Drawing.Point(165, 65);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(382, 20);
-            this.textBox3.TabIndex = 38;
+            this.textBox3.TabIndex = 53;
             // 
             // label2
             // 
@@ -105,7 +105,7 @@ namespace Consultorio.View
             this.textBox2.Location = new System.Drawing.Point(165, 39);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(382, 20);
-            this.textBox2.TabIndex = 36;
+            this.textBox2.TabIndex = 51;
             // 
             // label1
             // 
@@ -131,19 +131,21 @@ namespace Consultorio.View
             this.button4.Location = new System.Drawing.Point(553, 64);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(97, 20);
-            this.button4.TabIndex = 53;
+            this.button4.TabIndex = 54;
             this.button4.Text = "Procurar";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy hh:mm";
+            this.dateTimePicker1.CustomFormat = "dd/MM/yyyy HH:mm";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimePicker1.Location = new System.Drawing.Point(165, 12);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(485, 20);
-            this.dateTimePicker1.TabIndex = 54;
+            this.dateTimePicker1.TabIndex = 50;
+            this.dateTimePicker1.Value = System.DateTime.Today;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox1
             // 
@@ -158,7 +160,7 @@ namespace Consultorio.View
             this.buttonExcluir.Location = new System.Drawing.Point(12, 118);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
-            this.buttonExcluir.TabIndex = 56;
+            this.buttonExcluir.TabIndex = 58;
             this.buttonExcluir.Text = "Excluir";
             this.buttonExcluir.UseVisualStyleBackColor = true;
             this.buttonExcluir.Click += new System.EventHandler(this.buttonExcluir_Click);

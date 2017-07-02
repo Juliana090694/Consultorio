@@ -62,6 +62,20 @@ namespace Consultorio.Controller
             }
         }
 
+        public Prontuario search(DateTime date, string CRM)
+        {
+            using (Model1Container model1 = new Model1Container())
+            {
+                return model1.ProntuarioSet
+                    .Include(c => c.Paciente)
+                    .Include(c => c.Medico)
+                    .Include(c => c.Consulta)
+                    .Where(c => c.Consulta.DataConsulta == date)
+                    .Where(v => v.Medico.CRM == CRM)
+                    .FirstOrDefault();
+            }
+        }
+
         public void add(Prontuario prontuario)
         {
             using (Model1Container model1 = new Model1Container())

@@ -21,9 +21,9 @@ namespace Consultorio.View
 
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
-            if (dateTimePicker1.Value != null && dateTimePicker1.Text != "")
+            if (dateTimePicker1.Value != null && dateTimePicker1.Text != "" && objectListView1.SelectedObject != null)
             {
-                Prontuario p = ProntuarioController.ProntuarioC.search(dateTimePicker1.Value);
+                Prontuario p = ProntuarioController.ProntuarioC.search(((Consulta)objectListView1.SelectedObject).DataConsulta, (string)comboBox1.SelectedValue);
 
                 if (p != null)
                 {
@@ -45,11 +45,30 @@ namespace Consultorio.View
         public void ClearBoxes()
         {
             dateTimePicker1.Value = DateTime.Today;
+            objectListView1.SetObjects(null);
         }
 
         private void ProntuarioSearchView_Load(object sender, EventArgs e)
         {
+            // TODO: esta linha de código carrega dados na tabela 'consultoríoDataSet.MedicoSet'. Você pode movê-la ou removê-la conforme necessário.
+            this.medicoSetTableAdapter.Fill(this.consultoríoDataSet.MedicoSet);
             dateTimePicker1.Value = DateTime.Today;
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedValue != null && dateTimePicker1.Value != null)
+            {
+                objectListView1.SetObjects(ConsultaController.ConsultaC.search(dateTimePicker1.Value, (string)comboBox1.SelectedValue));
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox1.SelectedItem != null && dateTimePicker1.Value != null)
+            {
+                objectListView1.SetObjects(ConsultaController.ConsultaC.search(dateTimePicker1.Value, (string)comboBox1.SelectedValue));
+            }
         }
     }
 }

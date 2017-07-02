@@ -64,34 +64,38 @@
             this.prontuárioToolStripMenuItem});
             this.adicionarToolStripMenuItem.Name = "adicionarToolStripMenuItem";
             this.adicionarToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.adicionarToolStripMenuItem.Text = "Adicionar";
+            this.adicionarToolStripMenuItem.Text = "&Adicionar";
             // 
             // pacienteToolStripMenuItem
             // 
             this.pacienteToolStripMenuItem.Name = "pacienteToolStripMenuItem";
-            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.pacienteToolStripMenuItem.Text = "Paciente";
+            this.pacienteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.pacienteToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.pacienteToolStripMenuItem.Text = "&Paciente";
             this.pacienteToolStripMenuItem.Click += new System.EventHandler(this.pacienteToolStripMenuItem_Click);
             // 
             // médicoToolStripMenuItem
             // 
             this.médicoToolStripMenuItem.Name = "médicoToolStripMenuItem";
-            this.médicoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.médicoToolStripMenuItem.Text = "Médico";
+            this.médicoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.M)));
+            this.médicoToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.médicoToolStripMenuItem.Text = "&Médico";
             this.médicoToolStripMenuItem.Click += new System.EventHandler(this.médicoToolStripMenuItem_Click);
             // 
             // consultaToolStripMenuItem
             // 
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.consultaToolStripMenuItem.Text = "Consulta";
+            this.consultaToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.consultaToolStripMenuItem.Text = "&Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
             // prontuárioToolStripMenuItem
             // 
             this.prontuárioToolStripMenuItem.Name = "prontuárioToolStripMenuItem";
-            this.prontuárioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.prontuárioToolStripMenuItem.Text = "Prontuário";
+            this.prontuárioToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.R)));
+            this.prontuárioToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.prontuárioToolStripMenuItem.Text = "&Prontuário";
             this.prontuárioToolStripMenuItem.Click += new System.EventHandler(this.prontuárioToolStripMenuItem_Click_1);
             // 
             // procurarToolStripMenuItem
@@ -108,29 +112,37 @@
             // pacienteToolStripMenuItem1
             // 
             this.pacienteToolStripMenuItem1.Name = "pacienteToolStripMenuItem1";
-            this.pacienteToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.pacienteToolStripMenuItem1.Text = "Paciente";
+            this.pacienteToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.P)));
+            this.pacienteToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
+            this.pacienteToolStripMenuItem1.Text = "&Paciente";
             this.pacienteToolStripMenuItem1.Click += new System.EventHandler(this.pacienteToolStripMenuItem1_Click);
             // 
             // médicoToolStripMenuItem1
             // 
             this.médicoToolStripMenuItem1.Name = "médicoToolStripMenuItem1";
-            this.médicoToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.médicoToolStripMenuItem1.Text = "Médico";
+            this.médicoToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.M)));
+            this.médicoToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
+            this.médicoToolStripMenuItem1.Text = "&Médico";
             this.médicoToolStripMenuItem1.Click += new System.EventHandler(this.médicoToolStripMenuItem1_Click);
             // 
             // consultaToolStripMenuItem1
             // 
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.consultaToolStripMenuItem1.Text = "Consulta";
+            this.consultaToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.C)));
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
+            this.consultaToolStripMenuItem1.Text = "&Consulta";
             this.consultaToolStripMenuItem1.Click += new System.EventHandler(this.consultaToolStripMenuItem1_Click);
             // 
             // prontuárioToolStripMenuItem1
             // 
             this.prontuárioToolStripMenuItem1.Name = "prontuárioToolStripMenuItem1";
-            this.prontuárioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.prontuárioToolStripMenuItem1.Text = "Prontuário";
+            this.prontuárioToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.R)));
+            this.prontuárioToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
+            this.prontuárioToolStripMenuItem1.Text = "&Prontuário";
             this.prontuárioToolStripMenuItem1.Click += new System.EventHandler(this.prontuárioToolStripMenuItem1_Click);
             // 
             // pictureBox1

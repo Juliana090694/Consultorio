@@ -40,18 +40,20 @@ namespace Consultorio.View
             button2.Enabled = true;
             button3.Enabled = true;
             button4.Enabled = true;
-
+            this.dateTimePicker1.MinDate = DateTime.Today;
             consulta = new Consulta();
         }
 
         public void setComponents(Consulta consulta, bool isEditable)
         {
+            this.dateTimePicker1.MinDate = new DateTime(1753,01,02,00,00,00);
             dateTimePicker1.Value = consulta.DataConsulta;
             textBox2.Text = consulta.Medico.CRM + " - " + consulta.Medico.Nome;
             textBox3.Text = consulta.Paciente.CPF + " - " + consulta.Medico.Nome;
             textBox1.Text = consulta.Motivo;
             medico = consulta.Medico;
             paciente = consulta.Paciente;
+            
 
             this.consulta = consulta;
 
@@ -95,12 +97,24 @@ namespace Consultorio.View
                 consulta.Paciente = paciente;
                 consulta.Motivo = textBox1.Text;
 
-                if (isEditable && !isUpdating)
-                    ConsultaController.ConsultaC.add(consulta);
-                else if (isEditable && isUpdating)
-                    ConsultaController.ConsultaC.update(consulta);
-                clearBoxes();
-                Program.closeConsulta();
+
+                Consulta c = ConsultaController.ConsultaC.search(dateTimePicker1.Value);
+                if (c != null && c.Medico.CRM == medico.CRM)
+                {
+                    MessageBox.Show("Essa data já está marcada para outra consulta com o mesmo médico!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dateTimePicker1.Focus();
+                }
+                else
+                {
+                    if (isEditable && !isUpdating)
+                        ConsultaController.ConsultaC.add(consulta);
+                    else if (isEditable && isUpdating)
+                        ConsultaController.ConsultaC.update(consulta);
+                    clearBoxes();
+                    Program.closeConsulta();
+                }
+                
+                
             }
             else
             {
@@ -198,6 +212,18 @@ namespace Consultorio.View
                 catch(Exception e1)
                 {
                     MessageBox.Show("Não foi possível excluir pois algum cadastro ainda depende do registro!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            if (isEditable && !isUpdating)
+            {
+                if (dateTimePicker1.Value.Minute != 0 && dateTimePicker1.Value.Minute != 30)
+                {
+                    MessageBox.Show("Só é possível marcar consultas de meia em meia hora (0 e 30)", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    dateTimePicker1.Focus();
                 }
             }
         }
