@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Data.Entity;
 using System.Threading.Tasks;
+using System.Data.Entity.Core.Objects;
+using System.Data;
 
 namespace Consultorio.Controller
 {
@@ -58,6 +60,29 @@ namespace Consultorio.Controller
                     .FirstOrDefault();
             }
         }
+
+        public List<Consulta> search(DateTime date, string medicoCRM)
+        {
+            using (Model1Container model1 = new Model1Container())
+            {
+                try
+                {
+                    List<Consulta> ca = model1.ConsultaSet
+                    .Include(c => c.Paciente)
+                    .Include(c => c.Medico)
+                    .Where(c => c.Medico.CRM == medicoCRM)
+                    .Where(v => DbFunctions.TruncateTime(v.DataConsulta) == DbFunctions.TruncateTime(date))
+                    .ToList<Consulta>();
+                    return ca;
+                }
+                catch (Exception e)
+                {
+                    return null;
+                }
+
+            }
+        }
+
 
         public void add(Consulta consulta)
         {
