@@ -13,6 +13,7 @@ namespace Consultorio.Controller
         private static readonly ProntuarioController prontuarioC = new ProntuarioController();
         private static List<Prontuario> prontuarios = new List<Prontuario>();
 
+        //Singleton: retorna instância da classe
         public static ProntuarioController ProntuarioC
         {
             get
@@ -21,6 +22,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Retorna lista de prontuarios
         internal List<Prontuario> Prontuarios
         {
             get
@@ -36,6 +38,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura prontuario por id
         public Prontuario search(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -49,6 +52,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura prontuario por data da consulta
         public Prontuario search(DateTime date)
         {
             using (Model1Container model1 = new Model1Container())
@@ -62,6 +66,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura prontuario por data e medico
         public Prontuario search(DateTime date, string CRM)
         {
             using (Model1Container model1 = new Model1Container())
@@ -76,6 +81,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //adiciona prontuario
         public void add(Prontuario prontuario)
         {
             using (Model1Container model1 = new Model1Container())
@@ -88,6 +94,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //deleta medico 
         public void delete(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -102,6 +109,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Atualiza prontuario
         public void update(Prontuario prontuario)
         {
             using (Model1Container model1 = new Model1Container())

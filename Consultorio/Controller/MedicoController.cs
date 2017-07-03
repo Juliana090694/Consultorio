@@ -11,7 +11,8 @@ namespace Consultorio.Controller
     {
         private static readonly MedicoController medicoC = new MedicoController();
         private static List<Medico> medicos = new List<Medico>();
-
+        
+        //Singleton: retorna a instância da classe
         public static MedicoController MedicoC
         {
             get
@@ -20,6 +21,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Retorna a lista de medicos 
         internal List<Medico> Medicos
         {
             get
@@ -31,6 +33,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //procura medico por id
         public Medico search(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -41,6 +44,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //procura medico por crm
         public Medico search(string CRM)
         {
             using (Model1Container model1 = new Model1Container())
@@ -51,6 +55,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //adiciona medico
         public void add(Medico medico)
         {
             using (Model1Container model1 = new Model1Container())
@@ -60,6 +65,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //deleta medico
         public void delete(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -71,6 +77,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Atualiza medico
         public void update(Medico medico)
         {
             using (Model1Container model1 = new Model1Container())

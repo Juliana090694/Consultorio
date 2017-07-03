@@ -15,6 +15,7 @@ namespace Consultorio.Controller
         private static readonly ConsultaController consultaC = new ConsultaController();
         private static List<Consulta> consultas = new List<Consulta>();
 
+        //Singleton: retorna a instância fixa da classe
         public static ConsultaController ConsultaC
         {
             get
@@ -23,6 +24,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Retorna a lista de consultas do banco ao ser chamado
         internal List<Consulta> Consultas
         {
             get
@@ -37,6 +39,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura no banco por ID
         public Consulta search(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -49,6 +52,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura por data da consulta
         public Consulta search(DateTime date)
         {
             using (Model1Container model1 = new Model1Container())
@@ -61,6 +65,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura pela data da consulta para o médico em específico
         public List<Consulta> search(DateTime date, string medicoCRM)
         {
             using (Model1Container model1 = new Model1Container())
@@ -83,7 +88,7 @@ namespace Consultorio.Controller
             }
         }
 
-
+        //adiciona consulta
         public void add(Consulta consulta)
         {
             using (Model1Container model1 = new Model1Container())
@@ -95,6 +100,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Deleta um registro
         public void delete(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -108,6 +114,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Atualiza um cadastro no banco
         public void update(Consulta consulta)
         {
             using (Model1Container model1 = new Model1Container())

@@ -24,6 +24,7 @@ namespace Consultorio.View
             InitializeComponent();
         }
 
+        //Seta componentes em caso de novo registro
         public void setComponents()
         {
             foreach (Control c in Controls)
@@ -37,6 +38,7 @@ namespace Consultorio.View
             button2.Enabled = true;
         }
 
+        //Preeenche os campos e edita ou visualiza de acordo
         public void setComponents(Medico medico, bool isEditable)
         {
             textBox1.Text = medico.Nome;
@@ -75,6 +77,8 @@ namespace Consultorio.View
             }
         }
 
+        //Verifica se os campos são nulos ou não
+        //Preenche de acordo o modelo e envia ou atualiza o banco
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" &&
@@ -113,6 +117,7 @@ namespace Consultorio.View
             }
         }
 
+        //Limpa as caixas
         public void clearBoxes()
         {
             foreach (Control c in Controls)
@@ -134,7 +139,8 @@ namespace Consultorio.View
         {
 
         }
-
+        
+        //Botão de excluir que confirma e exclui o aberto
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Deseja realmente excluir esse registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

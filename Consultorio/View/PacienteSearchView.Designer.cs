@@ -96,6 +96,7 @@
             this.MaximizeBox = false;
             this.Name = "PacienteSearchView";
             this.Text = "Procurar Paciente";
+            this.Load += new System.EventHandler(this.PacienteSearchView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

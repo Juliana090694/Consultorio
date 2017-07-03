@@ -12,6 +12,7 @@ namespace Consultorio.Controller
         private static readonly PacienteController pacienteC = new PacienteController();
         private static List<Paciente> pacientes = new List<Paciente>();
 
+        //Singleton: retorna a instância do paciente
         public static PacienteController PacienteC
         {
             get
@@ -20,6 +21,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Retorna lista de pacientes
         internal List<Paciente> Pacientes
         {
             get
@@ -31,6 +33,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura paciente por id
         public Paciente search(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -41,6 +44,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Procura paciente por cpf
         public Paciente search(string CPF)
         {
             using (Model1Container model1 = new Model1Container())
@@ -51,6 +55,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //adiciona paciente
         public void add(Paciente paciente)
         {
             using (Model1Container model1 = new Model1Container())
@@ -60,6 +65,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //remove paciente
         public void delete(int id)
         {
             using (Model1Container model1 = new Model1Container())
@@ -71,6 +77,7 @@ namespace Consultorio.Controller
             }
         }
 
+        //Atualiza paciente
         public void update(Paciente paciente)
         {
             using (Model1Container model1 = new Model1Container())

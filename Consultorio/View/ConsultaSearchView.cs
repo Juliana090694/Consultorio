@@ -20,6 +20,7 @@ namespace Consultorio.View
             InitializeComponent();
         }
 
+        //roda quanso a tela carrega pela primeira vez
         private void ConsultaSearchView_Load(object sender, EventArgs e)
         {
             // TODO: esta linha de código carrega dados na tabela 'consultoríoDataSet.MedicoSet'. Você pode movê-la ou removê-la conforme necessário.
@@ -27,12 +28,14 @@ namespace Consultorio.View
             dateTimePicker1.Value = DateTime.Today;
         }
 
+        //limpa as caixas
         public void ClearBoxes()
         {
             dateTimePicker1.Value = DateTime.Today;
             objectListView1.SetObjects(null);
         }
 
+        //pega os campos preenchidos e procura no banco algo que bata com o procurado
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             if (dateTimePicker1.Value != null && dateTimePicker1.Text != "" && objectListView1.SelectedObject != null)
@@ -56,6 +59,7 @@ namespace Consultorio.View
             }
         }
 
+        //atualiza a lista quando muda o calendario
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedValue != null && dateTimePicker1.Value != null)
@@ -64,6 +68,7 @@ namespace Consultorio.View
             }
         }
 
+        //atualiza a lista quando muda o medico
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem != null && dateTimePicker1.Value != null)

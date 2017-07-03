@@ -28,6 +28,7 @@ namespace Consultorio.View
             InitializeComponent();
         }
 
+        //Seta os componentes para novo registro
         public void setComponents()
         {
             foreach (Control c in Controls)
@@ -39,23 +40,26 @@ namespace Consultorio.View
             }
             dateTimePicker1.Enabled = true;
             button2.Enabled = true;
-            comboBox1.Enabled = true;
+            textBox2.Enabled = true;
+            button3.Enabled = true;
             objectListView1.Enabled = true;
 
             prontuario = new Prontuario();
         }
 
+        //Seta os campos de acordo e ativa para edição ou visualização
         public void setComponents(Prontuario prontuario, bool isEditable)
         {
             dateTimePicker1.Value = prontuario.Consulta.DataConsulta;
-     
             this.medico = prontuario.Medico;
             objectListView1.SelectedObject = prontuario.Consulta;
-            comboBox1.SelectedValue = prontuario.Medico.CRM;
+            textBox2.Text = medico.CRM + " - " + medico.Nome;
             textBox1.Text = prontuario.DescricaoPaciente;
             textBox4.Text = prontuario.Diagnostico;
             textBox6.Text = prontuario.PrescricaoMedicamento;
             textBox5.Text = prontuario.PrescricaoTratamento;
+            objectListView1.SetObjects(ConsultaController.ConsultaC.search(dateTimePicker1.Value, medico.CRM));
+            objectListView1.SelectedObject = prontuario.Consulta;
 
             this.prontuario = prontuario;
 
@@ -70,7 +74,8 @@ namespace Consultorio.View
                 }
                 dateTimePicker1.Enabled = false;
                 button2.Enabled = false;
-                comboBox1.Enabled = false;
+                textBox2.Enabled = false;
+                button3.Enabled = false;
                 objectListView1.Enabled = false;
             }
             else
@@ -82,14 +87,16 @@ namespace Consultorio.View
                         ((TextBox)c).ReadOnly = false;
                     }
                 }
-                dateTimePicker1.Enabled = true;
+                dateTimePicker1.Enabled = false;
                 button2.Enabled = true;
-                comboBox1.Enabled = true;
-                objectListView1.Enabled = true;
+                textBox2.Enabled = false;
+                button3.Enabled = false;
+                objectListView1.Enabled = false;
                 buttonExcluir.Enabled = true;
             }
         }
 
+        //Limpa as caixas
         public void clearBoxes()
         {
             foreach (Control c in Controls)
@@ -114,10 +121,12 @@ namespace Consultorio.View
 
         }
 
+        //Verifica se os campos são nulos ou não
+        //Seta o modelo de acordo e envia para o banco para adição ou edição
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox4.Text != "" && textBox6.Text != "" && textBox5.Text != "" &&
-                dateTimePicker1.Value != null  && objectListView1.SelectedObject != null)
+                dateTimePicker1.Value != null  && medico != null && objectListView1.SelectedObject != null)
             {
                 prontuario.Consulta = ((Consulta)objectListView1.SelectedObject);
                 prontuario.Medico = ((Consulta)objectListView1.SelectedObject).Medico;
@@ -147,6 +156,7 @@ namespace Consultorio.View
 
         }
 
+        //Verifica se quer excluir e caso sim exclui
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Deseja realmente excluir esse registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -168,29 +178,37 @@ namespace Consultorio.View
 
         }
 
+        //Atualiza os campos de acordo com a data
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedValue != null && dateTimePicker1.Value != null)
+            if (medico != null && dateTimePicker1.Value != null)
             {
-                objectListView1.SetObjects(ConsultaController.ConsultaC.search(dateTimePicker1.Value, (string)comboBox1.SelectedValue));
+                objectListView1.SetObjects(ConsultaController.ConsultaC.search(dateTimePicker1.Value, medico.CRM));
             }
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        //Procura e preenche o medico
+        private void button3_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem != null && dateTimePicker1.Value != null)
+            if (textBox2.Text != "")
             {
-                objectListView1.SetObjects(ConsultaController.ConsultaC.search(dateTimePicker1.Value, (string)comboBox1.SelectedValue));
+                Medico m = MedicoController.MedicoC.search(textBox2.Text);
+                if (m != null)
+                {
+                    textBox2.Text = m.CRM + " - " + m.Nome;
+                    medico = m;
+                    textBox2.ReadOnly = true;
+                    button3.Enabled = false;
+                }
+                else
+                {
+                    MessageBox.Show("Médico não encontrado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nenhum campo pode estar vazio!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
-        private void comboBox1_BindingComplete(object sender, EventArgs e)
-        {
-            if (isUpdating)
-            {
-                comboBox1.SelectedValue = medico.CRM;
-            }
-        }
-
     }
 }

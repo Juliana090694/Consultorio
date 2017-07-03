@@ -44,24 +44,25 @@ namespace Consultorio.View
             this.buttonExcluir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.medicoSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.medicoSetBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
             this.consultoríoDataSet = new Consultorio.ConsultoríoDataSet();
+            this.medicoSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.medicoSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.medicoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label2 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.medicoSetTableAdapter = new Consultorio.ConsultoríoDataSetTableAdapters.MedicoSetTableAdapter();
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             this.Data = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
-            this.medicoSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.medicoSetBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).BeginInit();
+            this.button3 = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultoríoDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -182,44 +183,30 @@ namespace Consultorio.View
             this.dateTimePicker1.TabIndex = 85;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // comboBox1
+            // medicoSetBindingSource3
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.medicoSetBindingSource3, "CRM", true));
-            this.comboBox1.DataSource = this.medicoSetBindingSource2;
-            this.comboBox1.DisplayMember = "Nome";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(169, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(485, 21);
-            this.comboBox1.TabIndex = 83;
-            this.comboBox1.ValueMember = "CRM";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // medicoSetBindingSource1
-            // 
-            this.medicoSetBindingSource1.DataMember = "MedicoSet";
-            this.medicoSetBindingSource1.DataSource = this.consultoríoDataSet;
-            this.medicoSetBindingSource1.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
+            this.medicoSetBindingSource3.DataMember = "MedicoSet";
+            this.medicoSetBindingSource3.DataSource = this.consultoríoDataSet;
             // 
             // consultoríoDataSet
             // 
             this.consultoríoDataSet.DataSetName = "ConsultoríoDataSet";
             this.consultoríoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // medicoSetBindingSource2
+            // 
+            this.medicoSetBindingSource2.DataMember = "MedicoSet";
+            this.medicoSetBindingSource2.DataSource = this.consultoríoDataSet;
+            // 
+            // medicoSetBindingSource1
+            // 
+            this.medicoSetBindingSource1.DataMember = "MedicoSet";
+            this.medicoSetBindingSource1.DataSource = this.consultoríoDataSet;
+            // 
             // medicoSetBindingSource
             // 
             this.medicoSetBindingSource.DataMember = "MedicoSet";
             this.medicoSetBindingSource.DataSource = this.consultoríoDataSet;
-            this.medicoSetBindingSource.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 13);
-            this.label2.TabIndex = 82;
-            this.label2.Text = "Médico:";
             // 
             // label8
             // 
@@ -264,28 +251,43 @@ namespace Consultorio.View
             this.olvColumn1.Text = "Paciente";
             this.olvColumn1.Width = 273;
             // 
-            // medicoSetBindingSource2
+            // button3
             // 
-            this.medicoSetBindingSource2.DataMember = "MedicoSet";
-            this.medicoSetBindingSource2.DataSource = this.consultoríoDataSet;
-            this.medicoSetBindingSource2.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
+            this.button3.Location = new System.Drawing.Point(557, 11);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(97, 21);
+            this.button3.TabIndex = 90;
+            this.button3.Text = "Procurar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // medicoSetBindingSource3
+            // textBox2
             // 
-            this.medicoSetBindingSource3.DataMember = "MedicoSet";
-            this.medicoSetBindingSource3.DataSource = this.consultoríoDataSet;
-            this.medicoSetBindingSource3.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
+            this.textBox2.Location = new System.Drawing.Point(169, 12);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(382, 20);
+            this.textBox2.TabIndex = 89;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(10, 12);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(78, 13);
+            this.label2.TabIndex = 88;
+            this.label2.Text = "Médico (CRM):";
             // 
             // ProntuarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(666, 578);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.objectListView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.textBox5);
@@ -303,12 +305,12 @@ namespace Consultorio.View
             this.Name = "ProntuarioView";
             this.Text = "Prontuário";
             this.Load += new System.EventHandler(this.ProntuarioView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultoríoDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -329,8 +331,6 @@ namespace Consultorio.View
         private Button buttonExcluir;
         private Label label1;
         private DateTimePicker dateTimePicker1;
-        private ComboBox comboBox1;
-        private Label label2;
         private Label label8;
         private ConsultoríoDataSet consultoríoDataSet;
         private BindingSource medicoSetBindingSource;
@@ -341,5 +341,8 @@ namespace Consultorio.View
         private BrightIdeasSoftware.OLVColumn olvColumn1;
         private BindingSource medicoSetBindingSource3;
         private BindingSource medicoSetBindingSource2;
+        private Button button3;
+        private TextBox textBox2;
+        private Label label2;
     }
 }

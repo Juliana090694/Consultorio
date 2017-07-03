@@ -19,6 +19,7 @@ namespace Consultorio.View
             InitializeComponent();
         }
 
+        //Pega os campos e ativa para edição ou visualização
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             if (dateTimePicker1.Value != null && dateTimePicker1.Text != "" && objectListView1.SelectedObject != null)
@@ -42,6 +43,7 @@ namespace Consultorio.View
             }
         }
 
+        //limpa os campos
         public void ClearBoxes()
         {
             dateTimePicker1.Value = DateTime.Today;
@@ -55,6 +57,7 @@ namespace Consultorio.View
             dateTimePicker1.Value = DateTime.Today;
         }
 
+        //Quando a data muda, atualiza a lista de consultas de acordo
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedValue != null && dateTimePicker1.Value != null)
@@ -63,6 +66,7 @@ namespace Consultorio.View
             }
         }
 
+        //Quando o medico muda, atualiza a lista de consultas de acordo
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.SelectedItem != null && dateTimePicker1.Value != null)

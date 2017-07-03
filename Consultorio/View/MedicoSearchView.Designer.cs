@@ -96,6 +96,7 @@
             this.MaximizeBox = false;
             this.Name = "MedicoSearchView";
             this.Text = "Procurar Médico";
+            this.Load += new System.EventHandler(this.MedicoSearchView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

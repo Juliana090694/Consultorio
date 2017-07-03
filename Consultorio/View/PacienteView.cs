@@ -24,6 +24,7 @@ namespace Consultorio.View
             InitializeComponent();
         }
 
+        //Seta os campos para nova adição
         public void setComponents()
         {
             foreach (Control c in Controls)
@@ -38,6 +39,7 @@ namespace Consultorio.View
             paciente = new Model.Paciente();
         }
 
+        //Seta os campos com os valores e em seguida para edição ou visualização
         public void setComponents(Paciente paciente, bool isEditable)
         {
             textBox1.Text = paciente.Carteirinha;
@@ -75,6 +77,8 @@ namespace Consultorio.View
             }
         }
 
+        //Verifica se os campos são nulos ou não, se não for preenche o modelo, verifica se edita ou não
+        //No fim envia para adição ou edição
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox2.Text != "" && textBox3.Text != "" &&
@@ -112,6 +116,7 @@ namespace Consultorio.View
             }
         }
 
+        //Limpa as caixas
         public void clearBoxes()
         {
             foreach (Control c in Controls)
@@ -134,6 +139,7 @@ namespace Consultorio.View
 
         }
 
+        //Exclui o registro, confirmando antes ou não
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Deseja realmente excluir esse registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);

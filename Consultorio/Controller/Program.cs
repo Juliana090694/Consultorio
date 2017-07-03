@@ -20,6 +20,7 @@ namespace Consultorio
         private static PacienteSearchView pacienteSearchView;
         private static ProntuarioSearchView prontuarioSearchView;
 
+        //Instancia todas as janelas e abre a principal
         [STAThread]
         static void Main()
         {
@@ -37,13 +38,17 @@ namespace Consultorio
             Application.Run(mainForm);
         }
 
+        //Abre a tela de paciente para novo paciente
         public static void openPaciente()
         {
             pacienteView.clearBoxes();
             pacienteView.setComponents();
+            pacienteView.isEditable = true;
+            pacienteView.isUpdating = false;
             pacienteView.ShowDialog(mainForm);
         }
 
+        //abre a tela de paciente para atualizar ou visualizar paciente
         public static void openPaciente(Paciente paciente, bool isEditable)
         {
             pacienteView.clearBoxes();
@@ -53,13 +58,17 @@ namespace Consultorio
             pacienteView.ShowDialog(mainForm);
         }
 
+        //Abre tela para adicionar médico
         public static void openMedico()
         {
             medicoView.clearBoxes();
             medicoView.setComponents();
+            medicoView.isEditable = true;
+            medicoView.isUpdating = false;
             medicoView.ShowDialog(mainForm);
         }
 
+        //abre tela para editar ou visualizar medico
         public static void openMedico(Medico medico, bool isEditable)
         {
             medicoView.clearBoxes();
@@ -69,13 +78,17 @@ namespace Consultorio
             medicoView.ShowDialog(mainForm);
         }
 
+        //abre tela de consulta para visualizar
         public static void openConsulta()
         {
             consultaView.clearBoxes();
             consultaView.setComponents();
+            consultaView.isEditable = true;
+            consultaView.isUpdating = false;
             consultaView.ShowDialog(mainForm);
         }
 
+        //abre tela de consulta para editar ou visualizar
         public static void openConsulta(Consulta consulta, bool isEditable)
         {
             consultaView.clearBoxes();
@@ -85,13 +98,17 @@ namespace Consultorio
             consultaView.ShowDialog(mainForm);
         }
 
+        //abre tela de prontuario para adicionar novo
         public static void openProntuario()
         {
             prontuarioView.clearBoxes();
             prontuarioView.setComponents();
+            prontuarioView.isEditable = true;
+            prontuarioView.isUpdating = false;
             prontuarioView.ShowDialog(mainForm);
         }
 
+        //abre tela de prontuario para editar ou visualizar
         public static void openProntuario(Prontuario prontuario, bool isEditable)
         {
             prontuarioView.clearBoxes();
@@ -101,6 +118,7 @@ namespace Consultorio
             prontuarioView.ShowDialog(mainForm);
         }
 
+        //fecha as telas de cada um deles 
         public static void closePaciente()
         {
             pacienteView.isEditable = true;
@@ -128,6 +146,8 @@ namespace Consultorio
             prontuarioView.isUpdating = false;
             prontuarioView.Close();
         }
+
+        //abrem e fecham telas de pesquisas!
 
         public static void openConsultaSearch()
         {

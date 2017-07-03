@@ -27,6 +27,7 @@ namespace Consultorio.View
             InitializeComponent();
         }
 
+        //ativa os componentes para adição
         public void setComponents()
         {
             foreach (Control c in Controls)
@@ -44,6 +45,7 @@ namespace Consultorio.View
             consulta = new Consulta();
         }
 
+        //atualiza os campos com os dados recebidos e seta os campos de acordo caso edite ou não
         public void setComponents(Consulta consulta, bool isEditable)
         {
             this.dateTimePicker1.MinDate = new DateTime(1753,01,02,00,00,00);
@@ -88,6 +90,9 @@ namespace Consultorio.View
             }
         }
 
+        //Primeiro verifica se os campo são nulos ou não
+        //Se não forem ele preenche o modelo para o banco e verifica se a consulta já existe caso seja uma consulta nova
+        //Por fim ele manda para o banco em modo de edição ou adição e fecha a tela
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && medico != null && paciente != null && dateTimePicker1.Value != null)
@@ -99,7 +104,7 @@ namespace Consultorio.View
 
 
                 Consulta c = ConsultaController.ConsultaC.search(dateTimePicker1.Value);
-                if (c != null && c.Medico.CRM == medico.CRM)
+                if (c != null && c.Medico.CRM == medico.CRM && !isUpdating && isEditable)
                 {
                     MessageBox.Show("Essa data já está marcada para outra consulta com o mesmo médico!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     dateTimePicker1.Focus();
@@ -122,6 +127,7 @@ namespace Consultorio.View
             }
         }
 
+        //Procura o medico para preencher e salvar
         private void button3_Click(object sender, EventArgs e)
         {
             if (textBox2.Text != "")
@@ -145,6 +151,7 @@ namespace Consultorio.View
             }
         }
 
+        //procura paciente para preencheer e salvar
         private void button4_Click(object sender, EventArgs e)
         {
             if (textBox3.Text != "")
@@ -168,6 +175,7 @@ namespace Consultorio.View
             }
         }
 
+        //Limpa a caixas para a próxima edição
         public void clearBoxes()
         {
             foreach (Control c in Controls)
@@ -199,6 +207,7 @@ namespace Consultorio.View
 
         }
 
+        //Exclui o registro aberto
         private void buttonExcluir_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Deseja realmente excluir esse registro?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -216,6 +225,7 @@ namespace Consultorio.View
             }
         }
 
+        //Verifica erros em caso de minutos inválidos
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             if (isEditable && !isUpdating)

@@ -12,6 +12,7 @@ namespace Consultorio
 {
     public partial class Form1 : Form
     {
+        //Essa classe é responsável por chamaar as coisas no menu principal
         public Form1()
         {
             InitializeComponent();
@@ -55,6 +56,11 @@ namespace Consultorio
         private void prontuárioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             Program.openProntuarioSearch();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

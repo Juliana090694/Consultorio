@@ -19,6 +19,7 @@ namespace Consultorio.View
             InitializeComponent();
         }
 
+        //pega os campos e procura o medico no banco, retornando erro caso não encontre
         private void buttonPesquisar_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "")
@@ -42,9 +43,15 @@ namespace Consultorio.View
             }
         }
 
+        //Limpa a caixa
         public void ClearBoxes()
         {
             textBox1.Text = "";
+        }
+
+        private void MedicoSearchView_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
