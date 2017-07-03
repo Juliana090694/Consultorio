@@ -51,6 +51,7 @@ namespace Consultorio.View
      
             this.medico = prontuario.Medico;
             objectListView1.SelectedObject = prontuario.Consulta;
+            comboBox1.SelectedValue = prontuario.Medico.CRM;
             textBox1.Text = prontuario.DescricaoPaciente;
             textBox4.Text = prontuario.Diagnostico;
             textBox6.Text = prontuario.PrescricaoMedicamento;
@@ -116,8 +117,7 @@ namespace Consultorio.View
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox1.Text != "" && textBox4.Text != "" && textBox6.Text != "" && textBox5.Text != "" &&
-                dateTimePicker1.Value != null && consulta != null && paciente != null && medico != null 
-                && objectListView1.SelectedObject != null)
+                dateTimePicker1.Value != null  && objectListView1.SelectedObject != null)
             {
                 prontuario.Consulta = ((Consulta)objectListView1.SelectedObject);
                 prontuario.Medico = ((Consulta)objectListView1.SelectedObject).Medico;
@@ -183,5 +183,14 @@ namespace Consultorio.View
                 objectListView1.SetObjects(ConsultaController.ConsultaC.search(dateTimePicker1.Value, (string)comboBox1.SelectedValue));
             }
         }
+
+        private void comboBox1_BindingComplete(object sender, EventArgs e)
+        {
+            if (isUpdating)
+            {
+                comboBox1.SelectedValue = medico.CRM;
+            }
+        }
+
     }
 }

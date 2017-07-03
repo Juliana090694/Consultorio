@@ -47,7 +47,7 @@ namespace Consultorio.View
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(494, 118);
+            this.button2.Location = new System.Drawing.Point(494, 161);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 56;
@@ -58,7 +58,7 @@ namespace Consultorio.View
             // button1
             // 
             this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Location = new System.Drawing.Point(575, 118);
+            this.button1.Location = new System.Drawing.Point(575, 161);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 57;
@@ -144,20 +144,21 @@ namespace Consultorio.View
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(485, 20);
             this.dateTimePicker1.TabIndex = 50;
-            this.dateTimePicker1.Value = System.DateTime.Today;
+            this.dateTimePicker1.Value = new System.DateTime(2017, 7, 3, 0, 0, 0, 0);
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(165, 92);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(485, 20);
+            this.textBox1.Size = new System.Drawing.Size(485, 63);
             this.textBox1.TabIndex = 55;
             // 
             // buttonExcluir
             // 
             this.buttonExcluir.Enabled = false;
-            this.buttonExcluir.Location = new System.Drawing.Point(12, 118);
+            this.buttonExcluir.Location = new System.Drawing.Point(12, 161);
             this.buttonExcluir.Name = "buttonExcluir";
             this.buttonExcluir.Size = new System.Drawing.Size(75, 23);
             this.buttonExcluir.TabIndex = 58;
@@ -169,7 +170,7 @@ namespace Consultorio.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 153);
+            this.ClientSize = new System.Drawing.Size(662, 192);
             this.Controls.Add(this.buttonExcluir);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.dateTimePicker1);

@@ -49,7 +49,7 @@ namespace Consultorio.View
             this.dateTimePicker1.MinDate = new DateTime(1753,01,02,00,00,00);
             dateTimePicker1.Value = consulta.DataConsulta;
             textBox2.Text = consulta.Medico.CRM + " - " + consulta.Medico.Nome;
-            textBox3.Text = consulta.Paciente.CPF + " - " + consulta.Medico.Nome;
+            textBox3.Text = consulta.Paciente.CPF + " - " + consulta.Paciente.Nome;
             textBox1.Text = consulta.Motivo;
             medico = consulta.Medico;
             paciente = consulta.Paciente;

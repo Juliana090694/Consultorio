@@ -45,19 +45,23 @@ namespace Consultorio.View
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.medicoSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.consultoríoDataSet = new Consultorio.ConsultoríoDataSet();
             this.medicoSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.medicoSetTableAdapter = new Consultorio.ConsultoríoDataSetTableAdapters.MedicoSetTableAdapter();
-            this.medicoSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.objectListView1 = new BrightIdeasSoftware.ObjectListView();
             this.Data = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
             this.olvColumn1 = ((BrightIdeasSoftware.OLVColumn)(new BrightIdeasSoftware.OLVColumn()));
+            this.medicoSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.medicoSetBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultoríoDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource3)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
@@ -180,8 +184,8 @@ namespace Consultorio.View
             // 
             // comboBox1
             // 
-            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.medicoSetBindingSource1, "CRM", true));
-            this.comboBox1.DataSource = this.medicoSetBindingSource;
+            this.comboBox1.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.medicoSetBindingSource3, "CRM", true));
+            this.comboBox1.DataSource = this.medicoSetBindingSource2;
             this.comboBox1.DisplayMember = "Nome";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(169, 9);
@@ -190,6 +194,23 @@ namespace Consultorio.View
             this.comboBox1.TabIndex = 83;
             this.comboBox1.ValueMember = "CRM";
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // medicoSetBindingSource1
+            // 
+            this.medicoSetBindingSource1.DataMember = "MedicoSet";
+            this.medicoSetBindingSource1.DataSource = this.consultoríoDataSet;
+            this.medicoSetBindingSource1.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
+            // 
+            // consultoríoDataSet
+            // 
+            this.consultoríoDataSet.DataSetName = "ConsultoríoDataSet";
+            this.consultoríoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // medicoSetBindingSource
+            // 
+            this.medicoSetBindingSource.DataMember = "MedicoSet";
+            this.medicoSetBindingSource.DataSource = this.consultoríoDataSet;
+            this.medicoSetBindingSource.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
             // 
             // label2
             // 
@@ -209,24 +230,9 @@ namespace Consultorio.View
             this.label8.TabIndex = 78;
             this.label8.Text = "Consultas:";
             // 
-            // consultoríoDataSet
-            // 
-            this.consultoríoDataSet.DataSetName = "ConsultoríoDataSet";
-            this.consultoríoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // medicoSetBindingSource
-            // 
-            this.medicoSetBindingSource.DataMember = "MedicoSet";
-            this.medicoSetBindingSource.DataSource = this.consultoríoDataSet;
-            // 
             // medicoSetTableAdapter
             // 
             this.medicoSetTableAdapter.ClearBeforeFill = true;
-            // 
-            // medicoSetBindingSource1
-            // 
-            this.medicoSetBindingSource1.DataMember = "MedicoSet";
-            this.medicoSetBindingSource1.DataSource = this.consultoríoDataSet;
             // 
             // objectListView1
             // 
@@ -258,6 +264,18 @@ namespace Consultorio.View
             this.olvColumn1.Text = "Paciente";
             this.olvColumn1.Width = 273;
             // 
+            // medicoSetBindingSource2
+            // 
+            this.medicoSetBindingSource2.DataMember = "MedicoSet";
+            this.medicoSetBindingSource2.DataSource = this.consultoríoDataSet;
+            this.medicoSetBindingSource2.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
+            // 
+            // medicoSetBindingSource3
+            // 
+            this.medicoSetBindingSource3.DataMember = "MedicoSet";
+            this.medicoSetBindingSource3.DataSource = this.consultoríoDataSet;
+            this.medicoSetBindingSource3.BindingComplete += new BindingCompleteEventHandler(comboBox1_BindingComplete);
+            // 
             // ProntuarioView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,10 +303,12 @@ namespace Consultorio.View
             this.Name = "ProntuarioView";
             this.Text = "Prontuário";
             this.Load += new System.EventHandler(this.ProntuarioView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.consultoríoDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.objectListView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicoSetBindingSource3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +339,7 @@ namespace Consultorio.View
         private BrightIdeasSoftware.ObjectListView objectListView1;
         private BrightIdeasSoftware.OLVColumn Data;
         private BrightIdeasSoftware.OLVColumn olvColumn1;
+        private BindingSource medicoSetBindingSource3;
+        private BindingSource medicoSetBindingSource2;
     }
 }

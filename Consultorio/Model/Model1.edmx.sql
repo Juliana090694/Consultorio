@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 06/11/2017 22:18:52
--- Generated from EDMX file: C:\Users\jujub\onedrive\documentos\visual studio 2015\Projects\Consultorio\Consultorio\Model\Model1.edmx
+-- Date Created: 07/03/2017 01:14:47
+-- Generated from EDMX file: C:\Users\jujub\OneDrive\Documentos\Visual Studio 2015\Projects\Consultorio\Consultorio\Model\Model1.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,20 +17,20 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_ConsultaPaciente]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PacienteSet] DROP CONSTRAINT [FK_ConsultaPaciente];
+IF OBJECT_ID(N'[dbo].[FK_MedicoConsulta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsultaSet] DROP CONSTRAINT [FK_MedicoConsulta];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ConsultaMedico]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MedicoSet] DROP CONSTRAINT [FK_ConsultaMedico];
+IF OBJECT_ID(N'[dbo].[FK_PacienteConsulta]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ConsultaSet] DROP CONSTRAINT [FK_PacienteConsulta];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProntuarioPaciente]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PacienteSet] DROP CONSTRAINT [FK_ProntuarioPaciente];
+IF OBJECT_ID(N'[dbo].[FK_PacienteProntuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProntuarioSet] DROP CONSTRAINT [FK_PacienteProntuario];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProntuarioMedico]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MedicoSet] DROP CONSTRAINT [FK_ProntuarioMedico];
+IF OBJECT_ID(N'[dbo].[FK_ConsultaProntuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProntuarioSet] DROP CONSTRAINT [FK_ConsultaProntuario];
 GO
-IF OBJECT_ID(N'[dbo].[FK_ProntuarioConsulta]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ConsultaSet] DROP CONSTRAINT [FK_ProntuarioConsulta];
+IF OBJECT_ID(N'[dbo].[FK_MedicoProntuario]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[ProntuarioSet] DROP CONSTRAINT [FK_MedicoProntuario];
 GO
 
 -- --------------------------------------------------
