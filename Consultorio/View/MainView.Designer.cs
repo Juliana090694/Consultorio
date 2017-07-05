@@ -39,6 +39,11 @@
             this.médicoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.prontuárioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.listasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pacienteLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medicoLToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultaLToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.prontuarioLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,13 +53,13 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adicionarToolStripMenuItem,
-            this.procurarToolStripMenuItem});
+            this.procurarToolStripMenuItem,
+            this.listasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(440, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // adicionarToolStripMenuItem
             // 
@@ -108,7 +113,7 @@
             this.prontuárioToolStripMenuItem1});
             this.procurarToolStripMenuItem.Name = "procurarToolStripMenuItem";
             this.procurarToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.procurarToolStripMenuItem.Text = "Procurar";
+            this.procurarToolStripMenuItem.Text = "&Procurar";
             // 
             // pacienteToolStripMenuItem1
             // 
@@ -145,6 +150,49 @@
             this.prontuárioToolStripMenuItem1.Size = new System.Drawing.Size(203, 22);
             this.prontuárioToolStripMenuItem1.Text = "&Prontuário";
             this.prontuárioToolStripMenuItem1.Click += new System.EventHandler(this.prontuárioToolStripMenuItem1_Click);
+            // 
+            // listasToolStripMenuItem
+            // 
+            this.listasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pacienteLToolStripMenuItem,
+            this.medicoLToolStripMenuItem1,
+            this.consultaLToolStripMenuItem2,
+            this.prontuarioLToolStripMenuItem});
+            this.listasToolStripMenuItem.Name = "listasToolStripMenuItem";
+            this.listasToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.listasToolStripMenuItem.Text = "&Listas";
+            // 
+            // pacienteLToolStripMenuItem
+            // 
+            this.pacienteLToolStripMenuItem.Name = "pacienteLToolStripMenuItem";
+            this.pacienteLToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
+            this.pacienteLToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.pacienteLToolStripMenuItem.Text = "&Paciente";
+            this.pacienteLToolStripMenuItem.Click += new System.EventHandler(this.pacienteLToolStripMenuItem_Click);
+            // 
+            // medicoLToolStripMenuItem1
+            // 
+            this.medicoLToolStripMenuItem1.Name = "medicoLToolStripMenuItem1";
+            this.medicoLToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
+            this.medicoLToolStripMenuItem1.Size = new System.Drawing.Size(167, 22);
+            this.medicoLToolStripMenuItem1.Text = "&Medico";
+            this.medicoLToolStripMenuItem1.Click += new System.EventHandler(this.medicoLToolStripMenuItem1_Click);
+            // 
+            // consultaLToolStripMenuItem2
+            // 
+            this.consultaLToolStripMenuItem2.Name = "consultaLToolStripMenuItem2";
+            this.consultaLToolStripMenuItem2.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
+            this.consultaLToolStripMenuItem2.Size = new System.Drawing.Size(167, 22);
+            this.consultaLToolStripMenuItem2.Text = "&Consulta";
+            this.consultaLToolStripMenuItem2.Click += new System.EventHandler(this.consultaLToolStripMenuItem2_Click);
+            // 
+            // prontuarioLToolStripMenuItem
+            // 
+            this.prontuarioLToolStripMenuItem.Name = "prontuarioLToolStripMenuItem";
+            this.prontuarioLToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.R)));
+            this.prontuarioLToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.prontuarioLToolStripMenuItem.Text = "&Prontuário";
+            this.prontuarioLToolStripMenuItem.Click += new System.EventHandler(this.prontuarioLToolStripMenuItem_Click);
             // 
             // pictureBox1
             // 
@@ -191,6 +239,11 @@
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem prontuárioToolStripMenuItem1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ToolStripMenuItem listasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pacienteLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem medicoLToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem consultaLToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem prontuarioLToolStripMenuItem;
     }
 }
 

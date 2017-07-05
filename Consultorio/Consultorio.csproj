@@ -103,16 +103,40 @@
     <Compile Include="Model\Prontuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="View\ConsultaSearchView.cs">
+    <Compile Include="View\Lista\ListaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ConsultaSearchView.Designer.cs">
+    <Compile Include="View\Lista\ListaConsulta.Designer.cs">
+      <DependentUpon>ListaConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lista\ListaMedico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Lista\ListaMedico.Designer.cs">
+      <DependentUpon>ListaMedico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lista\ListaPaciente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Lista\ListaPaciente.Designer.cs">
+      <DependentUpon>ListaPaciente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Lista\ListaProntuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Lista\ListaProntuario.Designer.cs">
+      <DependentUpon>ListaProntuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Procura\ConsultaSearchView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Procura\ConsultaSearchView.Designer.cs">
       <DependentUpon>ConsultaSearchView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ConsultaView.cs">
+    <Compile Include="View\Cadastro\ConsultaView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ConsultaView.Designer.cs">
+    <Compile Include="View\Cadastro\ConsultaView.Designer.cs">
       <DependentUpon>ConsultaView.cs</DependentUpon>
     </Compile>
     <Compile Include="View\MainView.cs">
@@ -123,50 +147,62 @@
     </Compile>
     <Compile Include="Controller\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\MedicoSearchView.cs">
+    <Compile Include="View\Procura\MedicoSearchView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MedicoSearchView.Designer.cs">
+    <Compile Include="View\Procura\MedicoSearchView.Designer.cs">
       <DependentUpon>MedicoSearchView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MedicoView.cs">
+    <Compile Include="View\Cadastro\MedicoView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MedicoView.Designer.cs">
+    <Compile Include="View\Cadastro\MedicoView.Designer.cs">
       <DependentUpon>MedicoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PacienteSearchView.cs">
+    <Compile Include="View\Procura\PacienteSearchView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PacienteSearchView.Designer.cs">
+    <Compile Include="View\Procura\PacienteSearchView.Designer.cs">
       <DependentUpon>PacienteSearchView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\PacienteView.cs">
+    <Compile Include="View\Cadastro\PacienteView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\PacienteView.Designer.cs">
+    <Compile Include="View\Cadastro\PacienteView.Designer.cs">
       <DependentUpon>PacienteView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ProntuarioSearchView.cs">
+    <Compile Include="View\Procura\ProntuarioSearchView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ProntuarioSearchView.Designer.cs">
+    <Compile Include="View\Procura\ProntuarioSearchView.Designer.cs">
       <DependentUpon>ProntuarioSearchView.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\ProntuarioView.cs">
+    <Compile Include="View\Cadastro\ProntuarioView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\ProntuarioView.Designer.cs">
+    <Compile Include="View\Cadastro\ProntuarioView.Designer.cs">
       <DependentUpon>ProntuarioView.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Imagens.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Imagens.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ConsultaSearchView.resx">
+    <EmbeddedResource Include="View\Lista\ListaConsulta.resx">
+      <DependentUpon>ListaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lista\ListaMedico.resx">
+      <DependentUpon>ListaMedico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lista\ListaPaciente.resx">
+      <DependentUpon>ListaPaciente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Lista\ListaProntuario.resx">
+      <DependentUpon>ListaProntuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Procura\ConsultaSearchView.resx">
       <DependentUpon>ConsultaSearchView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ConsultaView.resx">
+    <EmbeddedResource Include="View\Cadastro\ConsultaView.resx">
       <DependentUpon>ConsultaView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\MainView.resx">
@@ -181,22 +217,22 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\MedicoSearchView.resx">
+    <EmbeddedResource Include="View\Procura\MedicoSearchView.resx">
       <DependentUpon>MedicoSearchView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MedicoView.resx">
+    <EmbeddedResource Include="View\Cadastro\MedicoView.resx">
       <DependentUpon>MedicoView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PacienteSearchView.resx">
+    <EmbeddedResource Include="View\Procura\PacienteSearchView.resx">
       <DependentUpon>PacienteSearchView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\PacienteView.resx">
+    <EmbeddedResource Include="View\Cadastro\PacienteView.resx">
       <DependentUpon>PacienteView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ProntuarioSearchView.resx">
+    <EmbeddedResource Include="View\Procura\ProntuarioSearchView.resx">
       <DependentUpon>ProntuarioSearchView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\ProntuarioView.resx">
+    <EmbeddedResource Include="View\Cadastro\ProntuarioView.resx">
       <DependentUpon>ProntuarioView.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Model\Model1.edmx">

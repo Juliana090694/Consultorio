@@ -58,9 +58,24 @@ namespace Consultorio
             Program.openProntuarioSearch();
         }
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void pacienteLToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Program.openListaPaciente();
+        }
 
+        private void medicoLToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Program.openListaMedico();
+        }
+
+        private void consultaLToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            Program.openListaConsulta();
+        }
+
+        private void prontuarioLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Program.openListaProntuario();
         }
     }
 }

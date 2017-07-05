@@ -1,5 +1,6 @@
 ﻿using Consultorio.Model;
 using Consultorio.View;
+using Consultorio.View.Lista;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,6 +20,11 @@ namespace Consultorio
         private static MedicoSearchView medicoSearchView;
         private static PacienteSearchView pacienteSearchView;
         private static ProntuarioSearchView prontuarioSearchView;
+        private static ListaConsulta listaconsulta;
+        private static ListaMedico listamedico;
+        private static ListaProntuario listaprontuario;
+        private static ListaPaciente listapaciente;
+
 
         //Instancia todas as janelas e abre a principal
         [STAThread]
@@ -35,6 +41,11 @@ namespace Consultorio
             medicoSearchView = new MedicoSearchView();
             pacienteSearchView = new PacienteSearchView();
             prontuarioSearchView = new ProntuarioSearchView();
+            listaconsulta = new ListaConsulta();
+            listamedico = new ListaMedico();
+            listapaciente = new ListaPaciente();
+            listaprontuario = new ListaProntuario();
+
             Application.Run(mainForm);
         }
 
@@ -191,6 +202,22 @@ namespace Consultorio
         public static void closeProntuarioSearch()
         {
             prontuarioSearchView.Close();
+        }
+        public static void openListaProntuario()
+        {
+            listaprontuario.ShowDialog(mainForm);
+        }
+        public static void openListaPaciente()
+        {
+            listapaciente.ShowDialog(mainForm);
+        }
+        public static void openListaConsulta()
+        {
+            listaconsulta.ShowDialog(mainForm);
+        }
+        public static void openListaMedico()
+        {
+            listamedico.ShowDialog(mainForm);
         }
     }
 }
