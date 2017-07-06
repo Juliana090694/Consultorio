@@ -99,7 +99,14 @@ namespace Consultorio.View
                     medico.Especializacao = textBox8.Text;
 
                     if (isEditable && !isUpdating)
-                        MedicoController.MedicoC.add(medico);
+                    {
+                        if(MedicoController.MedicoC.search(textBox2.Text) != null)
+                        {
+                            MessageBox.Show("Medico Já cadastrado com esse CRM", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }else
+                            MedicoController.MedicoC.add(medico);
+                          }
+                        
                     else if (isEditable && isUpdating)
                         MedicoController.MedicoC.update(medico);
                     clearBoxes();

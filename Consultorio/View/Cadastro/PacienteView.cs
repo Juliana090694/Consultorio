@@ -98,7 +98,14 @@ namespace Consultorio.View
                     paciente.Telefone = textBox7.Text;
 
                     if (isEditable && !isUpdating)
-                        PacienteController.PacienteC.add(paciente);
+                    {
+                        if (PacienteController.PacienteC.search(textBox3.Text) != null)
+                        {
+                            MessageBox.Show("Paciente Já cadastrado com esse CPF", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        else
+                            PacienteController.PacienteC.add(paciente);
+                    }
                     else if (isEditable && isUpdating)
                         PacienteController.PacienteC.update(paciente);
                     clearBoxes();
